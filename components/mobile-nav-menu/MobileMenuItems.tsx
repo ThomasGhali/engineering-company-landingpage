@@ -6,6 +6,8 @@ export default function MobileMenuItems() {
   // use cached data instead for admin data control        to be changed
   const menuData: MobileMenuItem[] = [
     {
+      header: 'Services',
+      description: 'Something',
       genericLink: {
         href: '#',
         title: 'Something',
@@ -28,6 +30,8 @@ export default function MobileMenuItems() {
       ],
     },
     {
+      header: 'Locations',
+      description: 'Something else',
       collapsible: true,
       title: 'Locations',
       links: [

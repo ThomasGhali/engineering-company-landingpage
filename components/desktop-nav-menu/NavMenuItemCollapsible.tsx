@@ -4,7 +4,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 
-export default function NavMenuItem({
+export default function NavMenuItemCollapsible({
   label,
   children,
 }: {
@@ -12,8 +12,8 @@ export default function NavMenuItem({
   children: React.ReactNode;
 }) {
   return (
-    <NavigationMenuItem>
-      <NavigationMenuTrigger className='bg-bg-400! text-md'>{label}</NavigationMenuTrigger>
+    <NavigationMenuItem >
+      <NavigationMenuTrigger className='bg-bg-400! text-md py-11'>{label}</NavigationMenuTrigger>
       <NavigationMenuContent>{children}</NavigationMenuContent>
     </NavigationMenuItem>
   );

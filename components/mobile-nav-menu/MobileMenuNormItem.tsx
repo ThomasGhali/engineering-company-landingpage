@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function MobileMenuNormItem({ link }: MobileMenuNormItemProps) {
+export default function MobileMenuNormItem({ link }: MenuNormItemProps) {
   return (
     <div className="mobile-menu-item p-4.5 bottom-border">
       <Link key={link.href} href={link.href} className="w-full inline-block">

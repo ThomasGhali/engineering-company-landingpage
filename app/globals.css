@@ -3,10 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.gh {
-  color: #e48430
-}
-
 @theme {
   --color-primary-100: #d66233; /* for attention: cta btns, links, progress bards, highlights, maybe even arrows it should be rare */
 
@@ -152,7 +148,7 @@
 
 @layer components {
   .main-header {
-    @apply bg-bg-400 pl-6 pr-12 py-4 h-22.5 w-screen flex-center drop-shadow;
+    @apply bg-bg-400 pl-6 pr-12 py-4 h-22.5 w-screen flex-center drop-shadow relative;
   }
   .menu-expand-btn {
     @apply absolute inset-0 transition-all duration-200;
