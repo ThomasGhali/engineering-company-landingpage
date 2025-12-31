@@ -38,7 +38,7 @@ export default function MobileMenuCollapsible({
 
           {links.map((link) => (
             <div key={link.href} className="my-7 text-base font-semibold">
-              <Link href={link.href} className="">
+              <Link href={link.href}>
                 {link.title}
               </Link>
             </div>

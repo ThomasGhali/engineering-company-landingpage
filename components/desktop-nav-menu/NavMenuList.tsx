@@ -1,12 +1,9 @@
-'use client';
-
 import { NavigationMenuList } from '@/components/ui/navigation-menu';
 
-import NavMenuItemCollapsible from './NavMenuItemCollapsible';
-import CollapsibleWindowContent from './CollapsibleWindowContent';
+import NavMenuItemCollapsible from './collapsible-menu-item/NavMenuItemCollapsible';
+import CollapsibleWindowContent from './collapsible-menu-item/CollapsibleWindowContent';
 
 import NavMenuItemNorm from '@/components/desktop-nav-menu/NavMenuItemNorm';
-import { useState } from 'react';
 
 export default function NavMenuList() {
   // change it to use the cache data instead of the constant - to be changed
@@ -19,7 +16,7 @@ export default function NavMenuList() {
         title: 'Something',
       },
       collapsible: true,
-      title: 'Services',
+      title: 'services',
       links: [
         {
           title: 'Service 1',
@@ -39,7 +36,7 @@ export default function NavMenuList() {
       header: 'Locations',
       description: 'Something else .. i meant to write down some description in here bro but i was just lazy .. kinda .. anyways though, here is the description .. hopfully it takes the space well',
       collapsible: true,
-      title: 'Locations',
+      title: 'locations',
       genericLink: {
         title: 'this is a link',
         href: '#'
@@ -92,14 +89,14 @@ export default function NavMenuList() {
     <NavigationMenuList>
       {menuData.map((item, index) =>
         item.collapsible ? (
-          <NavMenuItemCollapsible key={index} label={item.title}>
+          <NavMenuItemCollapsible key={item.title} label={item.title}>
             <CollapsibleWindowContent
               {...item}
             />
           </NavMenuItemCollapsible>
         ) : (
           <NavMenuItemNorm
-            key={index}
+            key={item.link.title}
             title={item.link.title}
             href={item.link.href}
           />

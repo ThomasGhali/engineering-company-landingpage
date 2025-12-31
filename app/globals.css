@@ -148,7 +148,7 @@
 
 @layer components {
   .main-header {
-    @apply bg-bg-400 pl-6 pr-12 py-4 h-22.5 w-screen flex-center drop-shadow relative;
+    @apply bg-bg-400 pl-6 pr-12 py-4 h-[68px] lg:h-22.5 w-screen flex-center drop-shadow transition-transform duration-100 fixed inset-0 z-50;
   }
   .menu-expand-btn {
     @apply absolute inset-0 transition-all duration-200;
@@ -159,7 +159,7 @@
   }
 
   .contact-button {
-    @apply cursor-pointer border-2 text-primary-100 border-primary-100 py-2 rounded-full font-semibold hover:bg-secondary-100 hover:border-transparent hover:text-white;
+    @apply uppercase cursor-pointer border-2 text-neutral-400 border-primary-100 px-6 py-4 rounded-full font-semibold hover:bg-secondary-100 hover:border-transparent hover:text-white transition-colors duration-200;
   }
 
   .close-button {
