@@ -3,8 +3,7 @@
 // to be changed: no need to make it a client component
 // but instead just grab the cache and use it (instead of useState)
 
-import { JSX, useState } from 'react';
-
+import { useState } from 'react';
 
 import {
   Sheet,
@@ -35,10 +34,10 @@ export default function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-neutral-400 text-xl font-medium">
+          <SheetTitle className="text-text-main text-xl font-medium">
             MENU
           </SheetTitle>
-          <SheetDescription className="text-neutral-100">
+          <SheetDescription className="text-text-muted">
             Navigation menu
           </SheetDescription>
         </SheetHeader>
@@ -46,7 +45,9 @@ export default function MobileMenu() {
         <MobileMenuItems />
 
         <SheetFooter>
-          <button className="uppercase border-2 border-primary-100  font-semibold rounded-full px-6 py-3 cursor-pointer hover:bg-secondary-100 hover:border-secondary-100 hover:text-white transition-colors duration-200  text-md mb-2">Contact Us</button>
+          <button className="uppercase border-2 border-primary-100  font-semibold rounded-full px-6 py-3 cursor-pointer hover:bg-primary-hover hover:border-primary-hover hover:text-white transition-colors duration-200  text-md mb-2">
+            Contact Us
+          </button>
           <SheetClose className="close-button">Close</SheetClose>
         </SheetFooter>
       </SheetContent>

@@ -1,18 +1,28 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@radix-ui/themes/styles.css';
 
 @custom-variant dark (&:is(.dark *));
 
+.gh {
+  color: #1a1c1e #4a5568;
+}
+
 @theme {
-  --color-primary-100: #d66233; /* for attention: cta btns, links, progress bards, highlights, maybe even arrows it should be rare */
+  --color-primary-100: #f26522; /*old: #d66233 for attention: cta btns, links, progress bards, highlights, maybe even arrows it should be rare */
+  --color-primary-hover: #d4541b; /* A deeper, richer orange for hover states */
 
-  --color-secondary-100: #e48430; /* secondary */
+  --color-secondary-100: #4a5568; /*old: #e48430 secondary */
 
-  --color-neutral-100: #606c38; /* section backgrounds, carousal containers, cards, mega menus */
-  --color-neutral-400: #283618; /* headings, body text, footer & navbar background */
+  --color-text-muted: #4a5568; /*old: #606c38 section backgrounds, carousal containers, cards, mega menus */
+  --color-text-main: #1a1c1e; /*old: #283618 headings, body text, footer & navbar background */
 
-  --color-bg-100: #fefae0; /* background */
-  --color-bg-400: #fbf7df; /* for the header */
+  --color-bg-100: #ffffff; /*old: #fefae0 background */
+  --color-bg-400: #f1f5f9; /*old: #fbf7df for the header */
+
+  --color-bg-border: #e2e8f0;
+
+  --color-navy-100: #2c5282;
 }
 
 @theme inline {
@@ -143,26 +153,39 @@
 }
 
 @utility bottom-border {
-  @apply border-b border-neutral-100/30;
+  @apply border-b border-text-muted;
 }
 
 @layer components {
   .main-header {
-    @apply bg-bg-400 pl-6 pr-12 py-4 h-[68px] lg:h-22.5 w-screen flex-center drop-shadow transition-transform duration-100 fixed inset-0 z-50;
+    @apply bg-bg-100 pl-6 pr-12 py-4 h-[68px] lg:h-22.5 w-screen flex-center drop-shadow transition-transform duration-100 fixed inset-0 z-50;
   }
   .menu-expand-btn {
     @apply absolute inset-0 transition-all duration-200;
   }
 
   .mobile-menu-item {
-    @apply text-neutral-400 font-black! text-xl!;
+    @apply text-text-main font-black! text-xl!;
   }
 
   .contact-button {
-    @apply uppercase cursor-pointer border-2 text-neutral-400 border-primary-100 px-6 py-4 rounded-full font-semibold hover:bg-secondary-100 hover:border-transparent hover:text-white transition-colors duration-200;
+    @apply uppercase cursor-pointer border-2 text-text-main border-primary-100 px-6 py-4 rounded-full font-semibold hover:bg-primary-hover hover:border-transparent hover:text-white transition-colors duration-200;
   }
 
   .close-button {
-    @apply cursor-pointer border border-neutral-400 py-2 rounded-full hover:bg-neutral-100 hover:border-transparent hover:text-white text-base font-semibold;
+    @apply cursor-pointer border border-text-main py-2 rounded-full hover:bg-text-muted hover:border-transparent hover:text-white text-base font-semibold;
+  }
+
+  .chevron {
+    @apply text-text-main bg-white rounded-[2px] border border-text-main cursor-pointer;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
