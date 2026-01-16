@@ -4,12 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.gh {
-  color: #1a1c1e #4a5568;
-}
+/* .gh {
+  color: #018289;
+} */
 
 @theme {
-  --color-primary-100: #f26522; /*old: #d66233 for attention: cta btns, links, progress bards, highlights, maybe even arrows it should be rare */
+  --color-primary-100: #ef4c00; /*old: #d66233 for attention: cta btns, links, progress bards, highlights, maybe even arrows it should be rare */
   --color-primary-hover: #d4541b; /* A deeper, richer orange for hover states */
 
   --color-secondary-100: #4a5568; /*old: #e48430 secondary */
@@ -17,12 +17,17 @@
   --color-text-muted: #4a5568; /*old: #606c38 section backgrounds, carousal containers, cards, mega menus */
   --color-text-main: #1a1c1e; /*old: #283618 headings, body text, footer & navbar background */
 
-  --color-bg-100: #ffffff; /*old: #fefae0 background */
+  --color-bg-100: #f2f2f2; /*old: #fefae0 background */
   --color-bg-400: #f1f5f9; /*old: #fbf7df for the header */
 
   --color-bg-border: #e2e8f0;
 
-  --color-navy-100: #2c5282;
+  --color-navy-100: #018289;
+
+  --color-charcoal-700: #2d2c2c;
+  --color-charcoal-900: #262122;
+
+  --breakpoint-xmd: 55rem;
 }
 
 @theme inline {
@@ -148,36 +153,50 @@
   @apply flex items-center justify-center;
 }
 
-@utility drop-shadow {
-  box-shadow: 0 4px 8px rgba(96, 108, 56, 0.2);
-}
-
 @utility bottom-border {
   @apply border-b border-text-muted;
 }
 
 @layer components {
   .main-header {
-    @apply bg-bg-100 pl-6 pr-12 py-4 h-[68px] lg:h-22.5 w-screen flex-center drop-shadow transition-transform duration-100 fixed inset-0 z-50;
+    @apply bg-charcoal-700 pl-6 pr-12 py-4 h-[68px] lg:h-22.5 w-screen flex-center transition-transform duration-100 fixed inset-0 z-50 border-b border-white;
   }
   .menu-expand-btn {
-    @apply absolute inset-0 transition-all duration-200;
+    @apply absolute text-white inset-0 transition-all duration-200;
   }
 
   .mobile-menu-item {
-    @apply text-text-main font-black! text-xl!;
+    @apply text-white font-black! text-xl!;
   }
 
   .contact-button {
-    @apply uppercase cursor-pointer border-2 text-text-main border-primary-100 px-6 py-4 rounded-full font-semibold hover:bg-primary-hover hover:border-transparent hover:text-white transition-colors duration-200;
+    @apply uppercase cursor-pointer border-2 text-white border-primary-100 px-6 py-4 rounded-full font-semibold hover:bg-primary-hover hover:border-transparent hover:text-white transition-colors duration-200;
   }
 
-  .close-button {
-    @apply cursor-pointer border border-text-main py-2 rounded-full hover:bg-text-muted hover:border-transparent hover:text-white text-base font-semibold;
+  .title-sm-text {
+    @apply text-primary-100 text-[1rem] uppercase tracking-widest;
   }
-
-  .chevron {
-    @apply text-text-main bg-white rounded-[2px] border border-text-main cursor-pointer;
+  .underline-expand {
+    @apply relative  
+    after:content-['']
+    after:absolute 
+    after:-bottom-0.5 
+    after:left-0 
+    after:w-full 
+    after:h-[2px] 
+    after:bg-white 
+    after:transition-transform 
+    after:duration-200 
+    after:ease-in-out 
+    after:origin-left
+    after:scale-x-0 
+    hover:after:scale-x-100;
+  }
+  .experience-col {
+    @apply lg:w-[360px];
+  }
+  .social-logo {
+    @apply text-white hover:text-primary-100 transition-colors duration-200;
   }
 }
 
@@ -187,5 +206,14 @@
   }
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
   }
 }

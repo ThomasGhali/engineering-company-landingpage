@@ -64,7 +64,7 @@ const MainHeader = () => {
           {/* mobile */}
           <MobileMenu />
 
-          <Image src="/logo2.png" alt="logo" width={118} height={37} priority />
+          <Image src="/logo-white.png" alt="logo" width={118} height={37} priority />
 
           {/* desktop */}
           <nav className="hidden lg:block">
@@ -82,13 +82,14 @@ const MainHeader = () => {
             className={`flex items-center gap-4 ${!searchHidden ? 'hidden' : 'block'}`}
           >
             <Search
+              color="white"
               className="w-5 h-5 cursor-pointer"
               onClick={() => setSearchHidden(!searchHidden)}
             />
           </div>
 
           <div className={`${searchHidden ? 'hidden' : 'block'}`}>
-            <Box className="max-w-[30vw]">
+            <Box className="max-w-[30vw] bg-charcoal-900">
               <TextField.Root placeholder="Search" size="2" ref={searchRef}>
                 <TextField.Slot>
                   <MagnifyingGlassIcon height="16" width="16" />

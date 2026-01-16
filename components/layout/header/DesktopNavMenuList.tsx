@@ -17,7 +17,7 @@ const NavMenuItemCollapsible = ({
   children: React.ReactNode;
 }) => (
   <NavigationMenuItem>
-    <NavigationMenuTrigger className="bg-bg-100! text-md py-11">
+    <NavigationMenuTrigger className="bg-transparent! text-md py-11 text-white">
       {label}
     </NavigationMenuTrigger>
     <NavigationMenuContent>{children}</NavigationMenuContent>
@@ -25,7 +25,7 @@ const NavMenuItemCollapsible = ({
 );
 
 const NavMenuItemNorm = ({ title, href }: Link) => (
-  <Link href={href} className="font-medium">
+  <Link href={href} className="font-medium text-white underline-expand">
     {title}
   </Link>
 );

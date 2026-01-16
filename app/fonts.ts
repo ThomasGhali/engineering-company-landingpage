@@ -1,4 +1,4 @@
-import { Inria_Serif, Inria_Sans } from 'next/font/google';
+import { Inria_Serif, Inria_Sans, Kodchasan, Inter } from 'next/font/google';
 
 export const inriaSerif = Inria_Serif({
   subsets: ['latin'],
@@ -6,6 +6,16 @@ export const inriaSerif = Inria_Serif({
 });
 
 export const inriaSans = Inria_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+});
+
+export const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+});
+
+export const kodchasan = Kodchasan({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
 });
