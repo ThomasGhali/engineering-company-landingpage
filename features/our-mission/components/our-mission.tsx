@@ -2,9 +2,9 @@
 
 import { JSX } from 'react';
 
-import ReadMoreBtn from '@/components/ui/ReadMoreBtn';
+import ReadMoreBtn from '@/components/ui/read-more-btn';
 
-import AnimatedUnderline from '@/components/ui/AnimatedUnderline';
+import AnimatedUnderline from '@/components/ui/animated-underline';
 
 import { inriaSans, kodchasan, poppins } from '@/app/fonts';
 
@@ -32,8 +32,8 @@ const OurMission = (): JSX.Element => {
       {/* Section Header */}
       <motion.div
         className="pb-10 overflow-x-hidden bg-charcoal-700 transition-colors duration-1000"
-        whileInView={{backgroundColor: 'white'}}
-        viewport={{amount: isDesktop ? 0.2 : 0.1, once: true }}
+        whileInView={{ backgroundColor: 'white' }}
+        viewport={{ amount: isDesktop ? 0.2 : 0.1, once: true }}
       >
         <motion.h1
           initial={{ opacity: 0, y: '40%' }}
@@ -50,7 +50,7 @@ const OurMission = (): JSX.Element => {
         >
           Our Mission
         </motion.h1>
-        <section className="text-text-main grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-20 mx-5 mt-10 md:mt-20">
+        <section className=" grid grid-cols-1 text-black items-center md:grid-cols-2 gap-10 md:gap-20 mx-5 mt-10 md:mt-20">
           {/* LEFT COLUMN: Description Container */}
           <div className="md:w-[72%] justify-self-end">
             <div className="leading-relaxed">
@@ -58,7 +58,7 @@ const OurMission = (): JSX.Element => {
               <motion.h2
                 className={
                   poppins.className +
-                  ' text-text-main md:text-[2.7rem] lg:text-6xl lg:min-w-[360px] text-[2rem] md:min-w-[245px] font-normal lg:mb-10 mb-5'
+                  ' md:text-[2.7rem] lg:text-6xl lg:min-w-[360px] text-[2rem] md:min-w-[260px] font-normal lg:mb-10 mb-5'
                 }
                 initial={{ y: '40%', opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}

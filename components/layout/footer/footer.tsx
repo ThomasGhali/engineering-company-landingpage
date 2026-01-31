@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { JSX } from 'react';
 
-import ContactsSection from '@/components/layout/footer/ContactsSection';
+import ContactsSection from '@/components/layout/footer/contacts-section';
 
 import {
   Accordion,

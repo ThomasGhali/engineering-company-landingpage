@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import Footer from '@/components/layout/footer/Footer';
-import MainHeader from '@/components/layout/header/components/MainHeader';
+import Footer from '@/components/layout/footer/footer';
+import MainHeader from '@/components/layout/header/components/main-header';
 
 export default function HomeLayout({
   children,
@@ -9,15 +9,15 @@ export default function HomeLayout({
 }>) {
   return (
     <>
-      <Suspense>
+      {/* <Suspense>
         <MainHeader />
-      </Suspense>
+      </Suspense> */}
       
       {children}
 
-      <Suspense>
+      {/* <Suspense>
         <Footer />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }

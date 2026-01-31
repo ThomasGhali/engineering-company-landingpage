@@ -1,4 +1,4 @@
-import ImageCarouselClient from "@/features/image-carousel/components/ImageCarouselClient";
+import ImageCarouselClient from "@/features/image-carousel/components/image-carousel-client";
 import { getImageCarouselData } from "@/features/image-carousel/queries";
 
 export default async function ImageCarousel() {

@@ -1,12 +1,12 @@
 'use client';
 
-import ReadMoreBtn from '@/components/ui/ReadMoreBtn';
+import ReadMoreBtn from '@/components/ui/read-more-btn';
 
 import { inter, kodchasan } from '@/app/fonts';
 
 import { motion } from 'motion/react';
 
-import ExperienceCard from './ExperienceCard';
+import ExperienceCard from './experience-card';
 
 import { ExperienceCardsData } from '@/features/our-experience/types';
 

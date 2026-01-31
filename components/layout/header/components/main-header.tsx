@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 import { MobileMenuItemProps, DesktopMenuItemProps } from '../types';
 
-import MobileMenu from './MobileMenu';
-import DesktopNavMenuList from './DesktopNavMenuList';
-import HeaderVisibilityWrapper from './HeaderVisibilityWrapper';
-import SearchToggle from './SearchToggle';
+import MobileMenu from './mobile-menu';
+import DesktopNavMenuList from './desktop-nav-menu-list';
+import HeaderVisibilityWrapper from './header-visibility-wrapper';
+import SearchToggle from './search-toggle';
 
 import { NavigationMenu } from '@/components/ui/navigation-menu';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import ReadMoreBtn from '@/components/ui/ReadMoreBtn';
+import ReadMoreBtn from '@/components/ui/read-more-btn';
 
 import { JSX, useEffect, useState } from 'react';
 

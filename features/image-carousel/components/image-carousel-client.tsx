@@ -8,7 +8,7 @@ import useImageIndexloop from '@/features/image-carousel/hooks/useImageIndexloop
 
 import nextArrow from '@/public/nextArrow.svg';
 
-import CarouselDescriptionCard from '@/features/image-carousel/components/CarouselDescriptionCard';
+import CarouselDescriptionCard from '@/features/image-carousel/components/carousel-description-card';
 
 import { CarouselCardsData } from '@/features/image-carousel/types';
 
@@ -141,7 +141,7 @@ export default function ImageCarouselClient({
   return (
     <>
       {/* Hero section container */}
-      <section className="w-full text-text-main md:relative">
+      <section className="w-full text-black md:relative">
         <CarouselImage
           imageIndex={imageIndex}
           isPaused={isPaused}

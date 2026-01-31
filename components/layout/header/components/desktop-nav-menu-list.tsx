@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import DesktopNavCollapsible from './DesktopNavCollapsible';
+import DesktopNavCollapsible from './desktop-nav-collapsible';
 import { Link as AppLink } from '@/types';
 
 import {

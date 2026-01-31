@@ -74,7 +74,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
@@ -147,6 +147,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background-color: black !important;
+    color: white;
+  }
 }
 
 @utility flex-center {
@@ -195,6 +200,9 @@
   .social-logo {
     @apply text-white hover:text-primary-100 transition-colors duration-200;
   }
+  .required-input {
+    @apply after:content-['*'] after:text-xl after:text-destructive;
+  }
 }
 
 @keyframes zoomIn {
@@ -217,9 +225,9 @@
 
 @keyframes scaleX {
   from {
-    transform:scaleX(0)
+    transform: scaleX(0);
   }
   to {
-    transform: scaleX(1)
+    transform: scaleX(1);
   }
 }

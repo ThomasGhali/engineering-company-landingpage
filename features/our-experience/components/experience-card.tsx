@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import { JSX } from 'react';
 
 import { motion } from 'motion/react';
 
-import ReadMoreBtn from '@/components/ui/ReadMoreBtn';
+import ReadMoreBtn from '@/components/ui/read-more-btn';
 
 import { inter } from '@/app/fonts';
 

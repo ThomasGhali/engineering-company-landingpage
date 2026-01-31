@@ -1,15 +1,15 @@
 import ImageCarousel from '@/features/image-carousel/components';
-import OurMission from '@/features/our-mission/components/OurMission';
-import CountupStats from '@/features/countup-stats/components/CountupStats';
+import OurMission from '@/features/our-mission/components/our-mission';
+import CountupStats from '@/features/countup-stats/components/countup-stats';
 import OurExperience from '@/features/our-experience/components';
 
 export default async function Home() {
   return (
     <>
-      <ImageCarousel />
+      {/* <ImageCarousel />
       <OurMission />
       <CountupStats />
-      <OurExperience />
+      <OurExperience /> */}
     </>
   );
 }
