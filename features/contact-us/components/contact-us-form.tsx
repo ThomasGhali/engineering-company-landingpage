@@ -25,6 +25,7 @@ import { submitContactForm } from '@/features/contact-us/actions';
 
 import { useRouter } from 'next/navigation';
 import AnimatedLogo from '@/public/animated-logo';
+import { inputFields } from '@/features/contact-us/components/data';
 
 const ContactUsForm = () => {
   const router = useRouter();
@@ -98,44 +99,19 @@ const ContactUsForm = () => {
         id="contact-us-form"
       >
         <FieldGroup>
-          {/* first name */}
-          <FormInput
-            control={control}
-            label="First Name"
-            name="firstName"
-            placeholder="Enter first name"
-            required
-          />
+          {/* Input fields */}
+          {inputFields.map((field) => (
+            <FormInput
+              key={field.name}
+              control={control}
+              label={field.label}
+              name={field.name}
+              placeholder={field.placeholder}
+              required={field.required}
+            />
+          ))}
 
-          {/* last name */}
-          <FormInput
-            control={control}
-            label="Last Name"
-            name="lastName"
-            placeholder="Enter last name"
-            required
-          />
-
-          {/* email */}
-          <FormInput
-            control={control}
-            label="Email Address"
-            name="email"
-            placeholder="Enter email address"
-            required
-            type="email"
-          />
-
-          {/* phone */}
-          <FormInput
-            control={control}
-            label="Phone Number"
-            name="phone"
-            placeholder="+1 234 567 8900"
-            type="tel"
-          />
-
-          {/* country */}
+          {/* Country */}
           <FormSelect
             label="Country"
             register={register}
@@ -144,7 +120,7 @@ const ContactUsForm = () => {
             placeholder="Select a Country"
           />
 
-          {/* about */}
+          {/* About */}
           <FormSelect
             label="Enquiry is about"
             register={register}
@@ -154,7 +130,7 @@ const ContactUsForm = () => {
             required
           />
 
-          {/* message */}
+          {/* Message */}
           <FormTextarea
             control={control}
             name="message"
@@ -164,12 +140,12 @@ const ContactUsForm = () => {
           />
         </FieldGroup>
 
-        {/* submit & reset */}
+        {/* Submit & reset */}
         <Field className="mt-8 justify-center" orientation="horizontal">
-          {/* reset button */}
+          {/* Reset button */}
           <FormResetBtn reset={reset} success={state.success} />
 
-          {/* submit button */}
+          {/* Submit button */}
           <Button
             type="submit"
             className="bg-primary-100 rounded-xs w-30 hover:bg-primary-hover/90 cursor-pointer"

@@ -7,10 +7,7 @@ import prisma from '@/lib/prisma';
 import { headers } from 'next/headers';
 
 import { aj } from '@/lib/arcjet';
-
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_KEY);
+import resend from '@/lib/resend';
 
 export async function submitContactForm(
   prevState: FormState,

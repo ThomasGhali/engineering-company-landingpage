@@ -66,3 +66,11 @@ export type FormState = {
   fieldErrors?: Partial<Record<keyof z.infer<typeof contactFormSchema>, string[]>>;
   message?: string | null;
 };
+
+export type InputField = {
+  name: Path<z.infer<typeof contactFormSchema>>;
+  label: string;
+  type?: React.HTMLInputTypeAttribute;
+  placeholder: string;
+  required?: boolean;
+}

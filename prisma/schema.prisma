@@ -168,7 +168,19 @@ model Messages {
   country String?
   about String
   message String
+  replied Boolean @default(false)
+  replies Replies[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Replies {
+  id String @id @default(uuid())
+
+  message String
+  createdAt DateTime @default(now())
+
+  messageId String
+  userMessage Messages @relation(fields: [messageId], references: [id], onDelete: Cascade)
 }

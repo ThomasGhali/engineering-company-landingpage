@@ -10,6 +10,7 @@ import SearchToggle from './search-toggle';
 import { NavigationMenu } from '@/components/ui/navigation-menu';
 
 import { getHeaderData } from '@/components/layout/header/queries';
+import QualtecLogo from '@/components/ui/qualtec-logo';
 
 const MainHeader = async () => {
   const menuData = await getHeaderData();
@@ -25,14 +26,7 @@ const MainHeader = async () => {
           {/* mobile */}
           <MobileMenu menuData={menuData as unknown as MobileMenuItemProps[]} />
 
-          <Image
-            src="/latest-logo2.png"
-            alt="logo"
-            width={105}
-            height={28}
-            className="w-[110px] lg:w-[130px]"
-            priority
-          />
+          <QualtecLogo className='w-[110px] lg:w-[130px]' />
 
           {/* desktop */}
           <nav className="hidden lg:block">

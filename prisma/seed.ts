@@ -315,6 +315,25 @@ const seedAdmin = async () => {
   });
 };
 
+const seedMessages = async () => {
+  const { messages } = await import('@/features/messages/data');
+
+  for (const message of messages) {
+    await prisma.messages.create({
+      data: {
+        firstName: message.firstName,
+        lastName: message.lastName,
+        email: message.email as string,
+        phone: message.phone,
+        country: message.country,
+        about: message.about,
+        message: message.message,
+        createdAt: message.createdAt,
+      },
+    });
+  }
+};
+
 async function main() {
   console.log('Starting database seeding...');
 
@@ -324,6 +343,7 @@ async function main() {
     prisma.experienceCardData.deleteMany(),
     prisma.footerColumn.deleteMany(),
     prisma.admin.deleteMany(),
+    prisma.messages.deleteMany(),
   ]);
   console.log('Cleaned existing data...');
 
@@ -341,6 +361,9 @@ async function main() {
 
   await seedFooterColumns();
   console.log('Footer columns seeded...', '5/5');
+
+  await seedMessages();
+  console.log('Messages seeded...', '6/6');
 
   console.log('Seeding finished successfully.');
 }

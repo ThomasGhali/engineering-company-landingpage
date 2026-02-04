@@ -81,7 +81,7 @@ function MobileMenuCollapsible({
 
 function MobileMenuItems({ menuData }: { menuData: MobileMenuItemProps[] }) {
   return (
-    <div className="text-white overflow-scroll">
+    <div className="text-white overflow-y-auto overflow-x-hidden">
       {menuData.map((item) =>
         item.collapsible ? (
           <MobileMenuCollapsible key={item.id} {...item} />

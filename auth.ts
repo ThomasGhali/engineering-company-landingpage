@@ -69,23 +69,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const username = token.username as string | undefined;
       const tokenVersion = token.tokenVersion as number | undefined;
 
-      console.log(
-        'Session Callback - username:',
-        username,
-        'tokenVersion in token:',
-        tokenVersion,
-      );
-
-      // 
       if (username && tokenVersion !== undefined && session.user) {
         const dbUser = await getUserFromDb(username);
-
-        console.log(
-          'dbUser from DB:',
-          dbUser?.username,
-          'dbUser.tokenVersion:',
-          dbUser?.tokenVersion,
-        );
 
         // If user doesn't exist or token version doesn't match, invalidate the session
         if (!dbUser || dbUser.tokenVersion !== tokenVersion) {
