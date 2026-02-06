@@ -12,11 +12,11 @@ export default function QualtecLogo({
   return (
     <>
       <Image
-        src="/latest-logo2.png"
+        src="/latest-logo2.svg"
         alt="logo"
         width={width}
         height={height}
-        className={className + ' bg-charcoal-700'}
+        className={className}
         priority
       />
     </>

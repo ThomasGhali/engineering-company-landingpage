@@ -1,3 +1,4 @@
+import QualtecLogo from '@/components/ui/qualtec-logo';
 import { SidebarHeader } from '@/components/ui/sidebar';
 import { Cpu } from 'lucide-react';
 
@@ -5,9 +6,7 @@ export default function SidebarCustomHeader({ open }: { open: boolean }) {
   return (
     <SidebarHeader className="border-b border-sidebar-border/50 px-4 py-5 group-data-[collapsible=icon]:px-0">
       <div className="flex items-center gap-3 transition-all duration-200 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-white shadow-md ring-1 ring-white/10">
-          <Cpu className="h-5 w-5" />
-        </div>
+          <QualtecLogo height={35} width={90} className='p-[2px] bg-charcoal-700 rounded-sm group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:w-10 group-data-[collapsible=icon]:h-10 group-data-[collapsible=icon]:rounded-full' />
         <div
           className={`flex flex-col transition-all duration-200 ${
             open

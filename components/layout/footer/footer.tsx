@@ -15,7 +15,11 @@ import { getFooterData } from '@/components/layout/footer/queries';
 
 import { FooterList } from '@/components/layout/footer/types';
 
-const MobileFooterMenu = ({footerList}: {footerList:FooterList}): JSX.Element => {
+const MobileFooterMenu = ({
+  footerList,
+}: {
+  footerList: FooterList;
+}): JSX.Element => {
   return (
     <div className="w-full xmd:hidden pt-10">
       <Accordion type="single" collapsible>
@@ -44,7 +48,11 @@ const MobileFooterMenu = ({footerList}: {footerList:FooterList}): JSX.Element =>
   );
 };
 
-const DesktopFooterMenu = ({footerList}: {footerList:FooterList}): JSX.Element => {
+const DesktopFooterMenu = ({
+  footerList,
+}: {
+  footerList: FooterList;
+}): JSX.Element => {
   return (
     <div className="max-xmd:hidden flex flex-1 justify-between xmd:pl-8 xmd:pr-4 xmd:flex xmd:pt-17 xmd:gap-x-5 w-full max-w-[1200px]">
       <ContactsSection />
@@ -97,7 +105,9 @@ const Footer = async () => {
       <DesktopFooterMenu footerList={footerData} />
 
       {/* Subtle Bottom Accent Line */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-primary-100/40 to-transparent mb-5 mt-10 xmd:mt-14 xmd:mb-9" />
+      <div className="w-full max-w-[1200px] mx-auto px-6">
+        <div className="h-px w-full bg-primary-100/20 mb-5 mt-10 xmd:mt-14 xmd:mb-9" />
+      </div>
 
       <div className="xmd:flex xmd:justify-between xmd:items-center px-6 w-full max-w-[1200px]">
         <PoliciesMenu className="xmd:hidden" />

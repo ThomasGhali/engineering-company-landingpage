@@ -1,47 +1,55 @@
 'use client';
 
 import { JSX } from 'react';
-
 import ReadMoreBtn from '@/components/ui/read-more-btn';
-
 import AnimatedUnderline from '@/components/ui/animated-underline';
-
 import { inriaSans, kodchasan, poppins } from '@/app/fonts';
-
-import { motion } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import useIsDesktop from '@/hooks/useIsDesktop';
 
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const videoVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 },
+  },
+};
 const OurMission = (): JSX.Element => {
   const isDesktop = useIsDesktop();
-  const videoVariants = {
-    hidden: {
-      opacity: 0,
-      x: isDesktop ? 40 : 0,
-      scale: isDesktop ? 1 : 0.95,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: { duration: isDesktop ? 2 : 0.8 },
-    },
-  };
 
   return (
     <>
-      {/* Section Header */}
       <motion.div
         className="pb-10 overflow-x-hidden bg-charcoal-700 transition-colors duration-1000"
         whileInView={{ backgroundColor: 'white' }}
-        viewport={{ amount: isDesktop ? 0.2 : 0.1, once: true }}
+        viewport={{ amount: 0.2, once: true }}
       >
+
         <motion.h1
-          initial={{ opacity: 0, y: '40%' }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
           viewport={{ amount: 0.5, once: true }}
           className={
             inriaSans.className +
@@ -50,94 +58,78 @@ const OurMission = (): JSX.Element => {
         >
           Our Mission
         </motion.h1>
-        <section className=" grid grid-cols-1 text-black items-center md:grid-cols-2 gap-10 md:gap-20 mx-5 mt-10 md:mt-20">
-          {/* LEFT COLUMN: Description Container */}
-          <div className="md:w-[72%] justify-self-end">
+
+        <section className="grid grid-cols-1 text-black items-center md:grid-cols-2 gap-10 md:gap-20 mx-5 mt-10 md:mt-20">
+          {/* --- LEFT COLUMN --- */}
+          <motion.div
+            className="md:w-[72%] justify-self-end"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.25, once: true }}
+          >
             <div className="leading-relaxed">
-              {/* Description Header */}
               <motion.h2
+                variants={fadeInUp}
                 className={
                   poppins.className +
                   ' md:text-[2.7rem] lg:text-6xl lg:min-w-[360px] text-[2rem] md:min-w-[260px] font-normal lg:mb-10 mb-5'
                 }
-                initial={{ y: '40%', opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: 'easeInOut' }}
-                viewport={{ amount: 0.3, once: true }}
               >
                 Engineering the Future
               </motion.h2>
 
-              {/* Description Text */}
-              <motion.div
+              <div
                 className={kodchasan.className + ' text-text-muted text-[1rem]'}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                viewport={{ amount: 0.6, once: true }}
               >
-                <motion.p
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, ease: 'easeIn', delay: 0.3 }}
-                  viewport={{ amount: 0.5, once: true }}
-                >
+                <motion.p variants={fadeInUp}>
                   We design and build infrastructure that balances{' '}
-                  <AnimatedUnderline delay={0.3}>
+                  <AnimatedUnderline delay={0.6}>
                     structural excellence
                   </AnimatedUnderline>{' '}
                   with{' '}
-                  <AnimatedUnderline delay={0.45}>
+                  <AnimatedUnderline delay={0.8}>
                     environmental responsibility
                   </AnimatedUnderline>
                   .
                 </motion.p>
-                <motion.p
-                  className="my-4.5"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, ease: 'easeIn', delay: 0.45 }}
-                  viewport={{ amount: 0.5, once: true }}
-                >
+
+                <motion.p className="my-4.5" variants={fadeInUp}>
                   From civil energy projects to high-speed transit networks, we
                   partner with governments to solve the world's{' '}
-                  <AnimatedUnderline delay={0.45}>
+                  <AnimatedUnderline delay={1.0}>
                     most complex challenges
                   </AnimatedUnderline>
                   .
                 </motion.p>
-                <motion.p
-                  className="my-4.5"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, ease: 'easeIn', delay: 0.5 }}
-                  viewport={{ amount: 0.5, once: true }}
-                >
+
+                <motion.p className="my-4.5" variants={fadeInUp}>
                   Reliable engineering, and infrastructure that delivers{' '}
-                  <AnimatedUnderline delay={0.55}>
+                  <AnimatedUnderline delay={1.2}>
                     lasting value
                   </AnimatedUnderline>
                   .
                 </motion.p>
-              </motion.div>
-              <div className="mt-9">
-                <ReadMoreBtn filled={true} />
               </div>
-            </div>
-          </div>
 
-          {/* RIGHT COLUMN: Video */}
+              <motion.div className="mt-9" variants={fadeInUp}>
+                <ReadMoreBtn filled={true} />
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* --- RIGHT COLUMN --- */}
           <motion.video
             variants={videoVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.5, once: true }}
+            viewport={{ amount: 0.25, once: true }}
             src="/our-mission.mp4"
             autoPlay
             loop
             muted
             playsInline
-            className="object-cover w-full md:max-h-[85vh] rounded-sm aspect-square"
+            className="object-cover w-full md:max-h-[85vh] rounded-sm aspect-square shadow-lg"
           />
         </section>
       </motion.div>

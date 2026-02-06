@@ -139,7 +139,7 @@ const DesktopNavCollapsible = ({
       <LinksSection links={links} />
     </div>
 
-    {images && (
+    {images && images.length > 0 && (
       <DesktopNavCollapsibleImages
         header={imagesHeader || ''}
         images={images}

@@ -1,17 +1,10 @@
-import NextImage from 'next/image';
+import QualtecLogo from '@/components/ui/qualtec-logo';
 
 export default function SignInHeader() {
   return (
     <>
       <div className="mb-8 flex flex-col items-center gap-4">
-        <NextImage
-          src="/latest-logo2.png"
-          alt="logo"
-          width={130}
-          height={36}
-          className="w-[130px] lg:w-[150px]"
-          priority
-        />
+        <QualtecLogo height={40} width={150} />
         <div className="h-px w-12 bg-zinc-800" />
       </div>
 

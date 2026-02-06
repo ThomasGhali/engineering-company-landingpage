@@ -48,7 +48,6 @@ const CountupStats = () => {
   return (
     <section className="relative bg-charcoal-700 overflow-hidden border-t border-white/5">
       <div className="relative mx-auto max-w-7xl px-5 md:px-16 lg:px-24">
-        
         <div className="grid grid-cols-2 lg:grid-cols-4 py-12 md:py-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -99,7 +98,9 @@ const CountupStats = () => {
       </div>
 
       {/* Subtle Bottom Accent Line */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-primary-100/40 to-transparent" />
+      <div className="w-full max-w-[1200px] mx-auto px-6">
+        <div className="h-px w-full bg-primary-100/20 mb-5 mt-10 xmd:mt-14 xmd:mb-9" />
+      </div>
     </section>
   );
 };

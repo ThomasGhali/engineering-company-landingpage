@@ -115,12 +115,14 @@ export default function MobileMenu({
           </SheetDescription>
         </SheetHeader>
 
-          <MobileMenuItems menuData={menuData} />
+        <MobileMenuItems menuData={menuData} />
 
         <SheetFooter>
-          <button className="uppercase border-2 border-primary-100  font-semibold rounded-full px-6 py-3 cursor-pointer hover:bg-primary-hover hover:border-primary-hover text-white transition-colors duration-200  text-md mb-2">
-            Contact Us
-          </button>
+          <Link href="/contact-us">
+            <button className="uppercase border-2 border-primary-100  font-semibold rounded-full px-6 py-3 cursor-pointer hover:bg-primary-hover hover:border-primary-hover text-white transition-colors duration-200  text-md mb-2">
+              Contact Us
+            </button>
+          </Link>
           <SheetClose className="cursor-pointer border border-white py-2 rounded-full text-white hover:bg-text-muted hover:border-transparent hover:text-white text-base font-semibold">
             Close
           </SheetClose>

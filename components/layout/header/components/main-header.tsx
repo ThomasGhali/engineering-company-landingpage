@@ -11,6 +11,7 @@ import { NavigationMenu } from '@/components/ui/navigation-menu';
 
 import { getHeaderData } from '@/components/layout/header/queries';
 import QualtecLogo from '@/components/ui/qualtec-logo';
+import Link from 'next/link';
 
 const MainHeader = async () => {
   const menuData = await getHeaderData();
@@ -26,7 +27,7 @@ const MainHeader = async () => {
           {/* mobile */}
           <MobileMenu menuData={menuData as unknown as MobileMenuItemProps[]} />
 
-          <QualtecLogo className='w-[110px] lg:w-[130px]' />
+          <QualtecLogo width={120} height={30} />
 
           {/* desktop */}
           <nav className="hidden lg:block">
@@ -35,9 +36,11 @@ const MainHeader = async () => {
                 menuData={menuData as unknown as DesktopMenuItemProps[]}
               />
 
-              <button className="contact-button text-[0.75rem] ml-10 ">
-                Contact Us
-              </button>
+              <Link href="/contact-us">
+                <button className="contact-button text-[0.75rem] ml-10 ">
+                  Contact Us
+                </button>
+              </Link>
             </NavigationMenu>
           </nav>
 

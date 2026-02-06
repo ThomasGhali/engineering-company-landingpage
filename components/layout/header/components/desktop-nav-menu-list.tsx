@@ -34,7 +34,7 @@ const NavMenuItemNorm = ({ title, href }: AppLink) => (
 
 export default async function DesktopNavMenuList({ menuData }: { menuData: DesktopMenuItemProps[] }) {
   return (
-    <NavigationMenuList>
+    <NavigationMenuList >
       {menuData.map((item) =>
         item.collapsible ? (
           <NavMenuItemCollapsible key={item.id} label={item.title!}>

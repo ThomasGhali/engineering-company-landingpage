@@ -1,7 +1,10 @@
 import { Suspense } from 'react';
+
+import { Toaster } from 'sonner';
+
 import Footer from '@/components/layout/footer/footer';
 import MainHeader from '@/components/layout/header/components/main-header';
-import { Toaster } from 'sonner';
+import AIChat from '@/features/ai-chat/components/ai-chat';
 
 export default function HomeLayout({
   children,
@@ -15,6 +18,8 @@ export default function HomeLayout({
       </Suspense>
 
       {children}
+
+      <AIChat />
 
       <Suspense>
         <Footer />

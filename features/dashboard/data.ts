@@ -11,12 +11,20 @@ export const sideBarContent: SideBarMenus = [
         icon: LayoutDashboard,
         subItems: [
           {
-            label: 'Dashboard',
-            href: '/admin/dashboard/overview',
+            label: 'Image Carousel',
+            href: '#',
           },
           {
-            label: 'Buttons',
-            href: '/admin/dashboard/overview',
+            label: 'Experience Cards',
+            href: '#',
+          },
+          {
+            label: 'Latest News',
+            href: '#',
+          },
+          {
+            label: 'our Services',
+            href: '#',
           },
         ],
       },
@@ -27,11 +35,15 @@ export const sideBarContent: SideBarMenus = [
         subItems: [
           {
             label: 'Locations',
-            href: '/admin/dashboard/locations',
+            href: '#',
           },
           {
-            label: 'Projects',
-            href: '/admin/dashboard/projects',
+            label: 'About Us',
+            href: '#',
+          },
+          {
+            label: 'Contact Us',
+            href: '#',
           },
         ],
       },

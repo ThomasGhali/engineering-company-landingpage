@@ -1,14 +1,10 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { IconButton, TextField, Box } from '@radix-ui/themes';
-import { MagnifyingGlassIcon, DotsHorizontalIcon } from '@radix-ui/react-icons';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
-/**
- * Client-side component:
- * Handles the search toggle functionality.
- */
 const SearchToggle = () => {
   const [searchHidden, setSearchHidden] = useState<boolean>(true);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -26,20 +22,32 @@ const SearchToggle = () => {
       >
         <Search
           color="white"
-          className="w-5 h-5 cursor-pointer"
+          className="w-5 h-5 cursor-pointer hover:opacity-80 transition-opacity"
           onClick={() => setSearchHidden(!searchHidden)}
         />
       </div>
 
       <div className={`${searchHidden ? 'hidden' : 'block'}`}>
-        <Box className="max-w-[30vw] bg-charcoal-900">
-          <TextField.Root placeholder="Search" size="2" ref={searchRef}>
+        <Box className="max-w-[350px] min-w-[200px]">
+          <TextField.Root
+            placeholder="Search projects..."
+            size="2"
+            ref={searchRef}
+            variant="surface"
+            className="rounded-full bg-white border border-charcoal-200 shadow-sm ring-primary-100 focus-within:ring-1"
+          >
             <TextField.Slot>
-              <MagnifyingGlassIcon height="16" width="16" />
+              <MagnifyingGlassIcon height="16" width="16" color="gray" />
             </TextField.Slot>
+
             <TextField.Slot>
-              <IconButton size="1" variant="ghost">
-                <DotsHorizontalIcon height="14" width="14" />
+              <IconButton
+                size="1"
+                variant="ghost"
+                onClick={() => setSearchHidden(true)}
+                className="cursor-pointer hover:bg-gray-100 rounded-full mr-1"
+              >
+                <X size={14} strokeWidth={2.5} color="black" />
               </IconButton>
             </TextField.Slot>
           </TextField.Root>

@@ -25,7 +25,9 @@
   --color-navy-100: #018289;
 
   --color-charcoal-700: #2d2c2c;
+  --color-charcoal-800: #2a2727;
   --color-charcoal-900: #262122;
+  --color-charcoal-950: #131111;
 
   --breakpoint-xmd: 55rem;
 }

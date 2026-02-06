@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import logoWhite from '@/public/latest-logo2.png';
+import logoWhite from '@/public/latest-logo2.svg';
 import { JSX } from 'react';
+import QualtecLogo from '@/components/ui/qualtec-logo';
 
 const SocialmediaLinks = (): JSX.Element => (
   <div className="flex justify-between gap-x-6 items-center">
@@ -137,8 +138,9 @@ const SocialmediaLinks = (): JSX.Element => (
 const ContactsSection = (): JSX.Element => {
   return (
     <div className="flex flex-col justify-between items-center w-min max-xmd:mx-auto gap-y-6 max-xmd:pt-10">
-      {/* Qualtech Logo */}
-      <Image src={logoWhite} alt="Logo" height={45} />
+      {/* <Image src={logoWhite} alt="Logo" height={60} /> */}
+
+      <QualtecLogo height={50} width={180} />
 
       <SocialmediaLinks />
 
@@ -147,11 +149,10 @@ const ContactsSection = (): JSX.Element => {
         <p>techsupport@qualtech.com</p>
       </address>
 
-      {/* Head Office Adress */}
       <div className="text-center">
         <h2 className="uppercase tracking-wider font-medium text-lg mb-4 mt-3">
           Head Office
-        </h2>
+        </h2> 
 
         <p>
           Ares Prime District <br /> Red Horizon Avenue, Block 42 <br /> Olympus

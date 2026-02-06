@@ -66,7 +66,7 @@ export default function ReplyForm({
               <InputGroupTextarea
                 name="message"
                 placeholder="Enter your message .."
-                className="min-h-[80px] max-h-[225px] overflow-y-auto resize-none"
+                className="min-h-[80px] max-h-[260px] w-[235px] overflow-y-auto resize-none"
               />
             </InputGroup>
           </Field>
