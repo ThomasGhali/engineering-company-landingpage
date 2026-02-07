@@ -21,14 +21,14 @@ A performant, secure, and scalable landing page for an engineering & constructio
 
 <div align="center">
 
-# [Live Demo <img src="https://www.svgrepo.com/show/450126/external-link.svg" width="20" height="20" />](added-soon)
+# [Live Demo <img src="https://www.svgrepo.com/show/450126/external-link.svg" width="20" height="20" />](https://engineering-company-webpage-nwya.vercel.app/)
 
 **Explore the admin dashboard.**
 
-[![Dashboard Access](https://img.shields.io/badge/Admin_Dashboard-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](added-soon)
+[![Dashboard Access](https://img.shields.io/badge/Admin_Dashboard-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://engineering-company-webpage-nwya.vercel.app/admin/sign-in)
 </div>
 
-> **<div align="center">Test Credentials</div>**<br> **Route**: `/admin/sign-in` <br> **Username**: `thomas-ghali` <br> **Pass**: `pageadminpassword123` <br>
+> **<div align="center">Test Credentials</div>**<br> **Route**: `https://engineering-company-webpage-nwya.vercel.app/admin/sign-in` <br> **Username**: `thomas-ghali` <br> **Pass**: `pageadminpassword123` <br>
 > <small>*Note: Mutation actions like 'Delete' and 'Reply' are **disabled in the demo environment** to **preserve data for others**. You can see 'Delete' and 'Reply' actions in the [visuals provided below](#5-real-time-message-management), or contact me at `thomasmetias29@gmail.com`.*</small>
 
 ## Why This Matters
