@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
+import FloatingGithubLink from '@/features/my-github/floating-github-link';
+
 import './globals.css';
 import { Theme } from '@radix-ui/themes';
 
@@ -20,12 +22,21 @@ export const metadata: Metadata = {
     default: 'Qualtec | Engineering Company',
     template: '%s | Qualtec',
   },
-  description: 'Modern engineering landing page with real-time projects dashboard.',
-  keywords: ['Engineering', 'Qualtec', 'Dashboard', 'Next.js', 'Vercel', 'Thomas Ghali'],
+  description:
+    'Modern engineering landing page with real-time projects dashboard.',
+  keywords: [
+    'Engineering',
+    'Qualtec',
+    'Dashboard',
+    'Next.js',
+    'Vercel',
+    'Thomas Ghali',
+  ],
   authors: [{ name: 'Thomas Ghali' }],
   openGraph: {
     title: 'Qualtec Engineering',
-    description: 'Modern engineering landing page with real-time projects dashboard.',
+    description:
+      'Modern engineering landing page with real-time projects dashboard.',
     type: 'website',
   },
 };
@@ -41,6 +52,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-100`}
       >
         <Theme>{children}</Theme>
+
+        <FloatingGithubLink />
       </body>
     </html>
   );

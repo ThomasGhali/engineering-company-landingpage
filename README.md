@@ -31,7 +31,7 @@ A performant, secure, and scalable landing page for an engineering & constructio
 > **<div align="center">Test Credentials</div>**<br> **Route**: `https://engineering-company-webpage-nwya.vercel.app/admin/sign-in` <br> **Username**: `thomas-ghali` <br> **Pass**: `pageadminpassword123` <br>
 > <small>*Note: Mutation actions like 'Delete' and 'Reply' are **disabled in the demo environment** to **preserve data for others**. You can see 'Delete' and 'Reply' actions in the visuals [for them](#5-real-time-message-management), and for the [ai-chatbot](#2-ai-powered-customer-support) are provided below, contact me for more access at `thomasmetias29@gmail.com`.*</small>
 
-## Why This Matters
+## More on Why This Tech Choice Matters
 
 As an engineering and construction company, digital reliability reflects physical craftsmanship. This project prioritizes:
 - **SEO Optimization**: Leveraging Next.js Server Components for maximum visibility and performance.

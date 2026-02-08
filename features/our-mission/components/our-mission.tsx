@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX } from 'react';
+import { JSX, useEffect } from 'react';
 import ReadMoreBtn from '@/components/ui/read-more-btn';
 import AnimatedUnderline from '@/components/ui/animated-underline';
 import { inriaSans, kodchasan, poppins } from '@/app/fonts';
@@ -38,6 +38,38 @@ const videoVariants: Variants = {
 const OurMission = (): JSX.Element => {
   const isDesktop = useIsDesktop();
 
+  useEffect(() => {
+    const line1 = ' %c Built by Thomas Ghali ';
+    const line2 =
+      ' %c Check out the source on GitHub: https://github.com/ThomasGhali/engineering-company-webpage';
+
+    const style1 = `
+    background: linear-gradient(90deg, #ef4c00 0%, #ff7f50 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  `;
+
+    const style2 = `
+    background: #131111;
+    color: #ef4c00;
+    padding: 10px 16px;
+    border-radius: 0 0 8px 8px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    border: 1px solid #2d2c2c;
+    border-top: none;
+  `;
+
+    console.log(line1, style1);
+    console.log(line2, style2);
+  }, []);
+
   return (
     <>
       <motion.div
@@ -45,7 +77,6 @@ const OurMission = (): JSX.Element => {
         whileInView={{ backgroundColor: 'white' }}
         viewport={{ amount: 0.2, once: true }}
       >
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
