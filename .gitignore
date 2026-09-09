@@ -50,3 +50,10 @@ next-env.d.ts
 
 # ai context
 PROJECT_CONTEXT.md
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
