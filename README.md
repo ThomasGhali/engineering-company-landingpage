@@ -1,5 +1,5 @@
-
 # Engineering Company Webpage with Dashboard (Qualtec)
+<!-- markdownlint-disable md033 -->
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwind-css)
@@ -32,9 +32,11 @@ A performant, secure, and scalable **landing page** for an engineering & constru
 > <small>*Note: Mutation actions like 'Delete' and 'Reply' are **disabled in the demo environment** to **preserve data for others**. You can see 'Delete' and 'Reply' actions in the visuals [for them](#5-real-time-message-management), and for the [ai-chatbot](#2-ai-powered-customer-support) are provided below, contact me for more access at `thomasmetias29@gmail.com`.*</small>
 
 ## More on Why This Tech Choice Matters
+
 <details><summary><strong>Expand section</strong></summary>
 
 As an engineering and construction company, digital reliability reflects physical craftsmanship. This project prioritizes:
+
 - **SEO Optimization**: Leveraging Next.js Server Components for maximum visibility and performance.
 - **Server Side Caching**: Boosts performance and SEO by serving data instantly from memory, reducing server costs and API overhead.
 - **Data Integrity**: Ensures site-wide consistency while reducing server costs and API overhead.
@@ -126,9 +128,11 @@ Respond to or delete user messages directly from the dashboard. This system uses
 ## Technical Deep Dive
 
 ### Data Integrity & Security
+
 **Zod** serves as the single source of truth for data validation, operating at both compile-time and runtime. When a form is submitted, the raw `FormData` is validated through `schema.safeParse()`, guaranteeing that only type-safe data reaches the database. This architecture provides defense-in-depth against malformed input and automated attacks.
 
 ### Server-Side Excellence
+
 - **Server Actions**: Handles all form submissions and data mutations directly on the server, reducing client-side JavaScript.
 - **Dynamic Content**: All components (including header & footer) are stored in the database, allowing admins to manipulate site data via the dashboard in real-time.
 - **Optimized Caching**: Implements server-side caching with automated revalidation to deliver high performance and immediate data consistency.
@@ -143,12 +147,14 @@ Respond to or delete user messages directly from the dashboard. This system uses
 ## Environment Setup
 
 ### Prerequisites
+
 - Node.js 20+
 - PostgreSQL database (Supabase is recommended)
 - Resend API account (for real world usage, but can be used out of the box with `Resend` default domain email)
 - Arcjet account (for the api key)
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -162,9 +168,10 @@ npm install
   <a href="#toc"><b>⤴ Back to Contents</b></a>
 </div>
 
-
 ### Environment Variables
+
 Create a `.env.local` file in the project root:
+
 ```env
 # Database
 DATABASE_URL="postgresql://user:password@localhost:5432/qualtech"
@@ -181,6 +188,7 @@ ARCJET_KEY="ajkey_your_arcjet_key"
 ```
 
 ### Database Setup
+
 ```bash
 # Push schema to database and generate Prisma client
 npm run prisma:sync
@@ -190,6 +198,7 @@ npm run prisma:seed
 ```
 
 ### Run Development Server
+
 ```bash
 npm run dev
 ```
@@ -210,8 +219,10 @@ npm start
 ---
 
 ## Project Structure
+
 I used folder-based structure to ensure future-proof code for scalability.
-```
+
+```md
 ├── app/                    # Next.js App Router (pages, layouts, and API)
 ├── components/             # Shared React components
 │   ├── layout/             # Navigation, footer, and shell components
@@ -236,4 +247,5 @@ I used folder-based structure to ensure future-proof code for scalability.
 ---
 
 ## License
-MIT
+
+[MIT License](LICENSE)

@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 
 import { AuthError } from 'next-auth';
 
-export const adminSignIn = async (prevState: any, formData: FormData) => {
+export const adminSignIn = async (prevState: unknown, formData: FormData) => {
   const username = formData.get('username') as string;
   const password = formData.get('password') as string;
 

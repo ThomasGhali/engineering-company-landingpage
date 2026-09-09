@@ -4,7 +4,9 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import FloatingGithubLink from '@/features/my-github/floating-github-link';
 
 import './globals.css';
+import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -47,10 +49,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-100`}
       >
+        <Script src="http://localhost:3000/widget.js" data-agent-id="123" />
+
         <Theme>{children}</Theme>
 
         <FloatingGithubLink />

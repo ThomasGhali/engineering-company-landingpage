@@ -6,66 +6,60 @@ export default function useImageIndexloop(imagesCount: number, delay: number) {
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
   const elapsedTimeRed = useRef<number>(0);
-  const startTimeRef = useRef<number>(performance.now());
+  const startTimeRef = useRef<number>(0);
   const animationFrameRef = useRef<number | null>(null);
 
-  const tick = useCallback(() => {
-    if (isPaused) return;
-
-    elapsedTimeRed.current = performance.now() - startTimeRef.current;
-    const newProgress = (elapsedTimeRed.current / delay) * 100;
-
-    setProgress(newProgress);
-
-    if (elapsedTimeRed.current >= delay) {
-      setImageIndex((prevIndex) => (prevIndex + 1) % imagesCount);
-      startTimeRef.current = performance.now();
-      setProgress(0);
-    }
-
-    animationFrameRef.current = requestAnimationFrame(tick);
+  const pausePlay = useCallback(() => {
+    setIsPaused((prev) => {
+      if (prev) {
+        // Was paused, unpausing
+        startTimeRef.current = performance.now() - elapsedTimeRed.current;
+      }
+      return !prev;
+    });
   }, []);
 
-  const pausePlay = useCallback(() => {
-    if (isPaused) {
-      startTimeRef.current = performance.now() - elapsedTimeRed.current;
-      setIsPaused(false);
-
-      if (animationFrameRef.current)
-        cancelAnimationFrame(animationFrameRef.current);
-
-      animationFrameRef.current = requestAnimationFrame(tick);
-    } else {
-      setIsPaused(true);
-
-      if (animationFrameRef.current)
-        cancelAnimationFrame(animationFrameRef.current);
-    }
-  }, [isPaused]);
-
-  const startAnimation = useCallback(() => {
-    setIsPaused(false);
-    startTimeRef.current = performance.now();
-    setProgress(0);
-    if (animationFrameRef.current)
-      cancelAnimationFrame(animationFrameRef.current);
-    animationFrameRef.current = requestAnimationFrame(tick);
-  }, [tick]);
-
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setImageIndex((prevIndex) => (prevIndex + 1) % imagesCount);
     startTimeRef.current = performance.now();
+    elapsedTimeRed.current = 0;
     setProgress(0);
-  };
+  }, [imagesCount]);
 
   useEffect(() => {
-    startAnimation();
+    // Initialize start time on first effect run
+    if (startTimeRef.current === 0) {
+      startTimeRef.current = performance.now();
+    }
+
+    const tick = () => {
+      if (isPaused) return;
+
+      elapsedTimeRed.current = performance.now() - startTimeRef.current;
+      const newProgress = (elapsedTimeRed.current / delay) * 100;
+
+      setProgress(newProgress);
+
+      if (elapsedTimeRed.current >= delay) {
+        setImageIndex((prevIndex) => (prevIndex + 1) % imagesCount);
+        startTimeRef.current = performance.now();
+        elapsedTimeRed.current = 0;
+        setProgress(0);
+      }
+
+      animationFrameRef.current = requestAnimationFrame(tick);
+    };
+
+    if (!isPaused) {
+      animationFrameRef.current = requestAnimationFrame(tick);
+    }
 
     return () => {
-      if (animationFrameRef.current)
+      if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
+      }
     };
-  }, [startAnimation]);
+  }, [isPaused, delay, imagesCount]);
 
   return {
     imageIndex,

@@ -6,12 +6,12 @@
     "node": ">=24.13.1"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4444",
     "build": "next build",
     "prisma:sync": "npx prisma db push && npx prisma generate",
     "prisma:seed": "npx prisma db seed",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start -p 4444",
+    "lint": "eslint . --quiet"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.21",

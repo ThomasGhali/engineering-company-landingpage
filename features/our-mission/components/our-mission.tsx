@@ -127,7 +127,7 @@ const OurMission = (): JSX.Element => {
 
                 <motion.p className="my-4.5" variants={fadeInUp}>
                   From civil energy projects to high-speed transit networks, we
-                  partner with governments to solve the world's{' '}
+                  partner with governments to solve the world&apos;s{' '}
                   <AnimatedUnderline delay={1.0}>
                     most complex challenges
                   </AnimatedUnderline>

@@ -37,7 +37,7 @@ const ContactUsForm = () => {
       email: '',
       phone: '',
       country: '',
-      about: '' as any,
+      about: '' as z.infer<typeof contactFormSchema>['about'],
       message: '',
     },
   });
@@ -54,7 +54,10 @@ const ContactUsForm = () => {
     initialState,
   );
 
-  const serverSubmit = async (data: any, event?: React.BaseSyntheticEvent) => {
+  const serverSubmit = async (
+    data: z.infer<typeof contactFormSchema>,
+    event?: React.BaseSyntheticEvent,
+  ) => {
     const HTMLForm = event?.target as HTMLFormElement;
 
     const formData = new FormData(HTMLForm);

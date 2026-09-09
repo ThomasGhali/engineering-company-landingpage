@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /assets
-
+/repomix-*
 
 # dependencies
 node_modules
@@ -47,3 +47,6 @@ yarn-error.log*
 next-env.d.ts
 
 /lib/generated/prisma
+
+# ai context
+PROJECT_CONTEXT.md
